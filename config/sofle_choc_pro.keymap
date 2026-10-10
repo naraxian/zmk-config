@@ -22,7 +22,7 @@
         compatible = "zmk,conditional-layers";
 
         adjust_layer {
-            if-layers = <3 4>;
+            if-layers = <4 5>;
             then-layer = <2>;
         };
     };
@@ -45,7 +45,7 @@
 &kp TAB    &kp Q   &kp W   &kp F   &kp P         &kp G         &kp J                           &kp L          &kp U             &kp Y              &kp SEMICOLON  &kp BACKSPACE
 &kp LCTRL  &kp A   &kp R   &kp S   &kp T         &kp D         &kp H                           &kp N          &kp E             &kp I              &kp O          &kp SQT
 &kp LSHFT  &kp Z   &kp X   &kp C   &kp V         &kp B         &kp C_MUTE  &kp C_PLAY  &kp K   &kp M          &kp COMMA         &kp DOT            &kp FSLH       &kp RSHFT
-                   &mo 2   &mo 1   &kp LEFT_GUI  &kp LEFT_ALT  &kp SPACE   &kp ENTER   &mo 1   &kp RIGHT_ALT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+                   &mo 1   &mo 2   &kp LEFT_GUI  &kp LEFT_ALT  &kp SPACE   &kp ENTER   &mo 1   &kp RIGHT_ALT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
@@ -79,9 +79,24 @@
 &bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                             &none  &none  &none  &none  &none  &none
 &ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_EFF  &none                          &none  &none  &none  &none  &none
 &none              &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &none            &none            &none            &none                          &none  &none  &none  &none  &none
-&none              &none            &none            &none            &none            &none            &rgb_ug RGB_TOG  &none  &none  &none  &none  &none  &none  &none
+&to 0              &to 3            &none            &none            &none            &none            &rgb_ug RGB_TOG  &none  &none  &none  &none  &none  &none  &none
                                     &none            &none            &none            &none            &none            &none  &none  &none  &none  &none
             >;
+        };
+
+        alternative {
+            display-name = "alternative";
+            bindings = <
+&kp ESC    &kp N1  &kp N2  &kp N3  &kp N4        &kp N5                                &kp N6  &kp N7         &kp N8            &kp N9             &kp N0         &kp MINUS
+&kp TAB    &kp Q   &kp W   &kp F   &kp P         &kp G         &kp J                           &kp L          &kp U             &kp Y              &kp SEMICOLON  &kp BACKSPACE
+&kp LCTRL  &kp A   &kp R   &kp S   &kp T         &kp D         &kp H                           &kp N          &kp E             &kp I              &kp O          &kp SQT
+&kp LSHFT  &kp Z   &kp X   &kp C   &kp V         &kp B         &kp C_MUTE  &kp C_PLAY  &kp K   &kp M          &kp COMMA         &kp DOT            &kp FSLH       &kp RSHFT
+                   &mo 1   &mo 2   &kp LEFT_ALT  &kp LEFT_WIN  &kp SPACE   &kp ENTER   &mo 1   &kp RIGHT_ALT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+            >;
+
+            sensor-bindings =
+                <&inc_dec_kp C_VOL_DN C_VOL_UP>,
+                <&inc_dec_kp C_PREV C_NEXT>;
         };
 
         lower_layer {
